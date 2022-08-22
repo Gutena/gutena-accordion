@@ -1,0 +1,183 @@
+.gutena-accordion-block {
+    display: grid;
+    row-gap: calc( var( --gutena--accordion-panel-spacing, 20 ) * 1px );
+
+    .gutena-accordion-block__panel {
+        border: var(--gutena--accordion-panel-border);
+        border-radius: var(--gutena--accordion-panel-border-radius);
+        background-color: var(--gutena--accordion-panel-background-color);
+        padding: var( --gutena--accordion-panel-padding, 20px );
+
+        .gutena-accordion-block__panel-title {
+            color: var( --gutena--accordion-panel-title-color );
+            cursor: pointer;
+            transition: 0.4s;
+            
+            .gutena-accordion-block__panel-title-inner {
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                margin: 0;
+                padding: 0;
+
+                p, div {
+                    color: var( --gutena--accordion-panel-title-color, var( --wp--preset--color--tertiary ) ) !important;
+                    font-family: var( --gutena--accordion-panel-title-font-family, var( --wp--custom--typography--font-family--secondary ) );
+                    font-style: var( --gutena--accordion-panel-title-font-style, inherit );
+                    font-weight: var( --gutena--accordion-panel-title-font-weight );
+                    font-size: var( --gutena--accordion-panel-title-font-size, var( --wp--custom--typography--font-size--p ) );
+                    line-height: var( --gutena--accordion-panel-title-line-height, var( --wp--custom--typography--line-height--p ) );
+                    text-transform: var( --gutena--accordion-panel-title-text-transform );
+                }
+
+                // .panel-title-content {
+                //     margin: 0 !important;
+                //     color: var( --gutena--accordion-panel-title-color, var( --wp--preset--color--tertiary ) ) !important;
+                //     font-family: var( --gutena--accordion-panel-title-font-family, var( --wp--custom--typography--font-family--secondary ) );
+                //     font-style: var( --gutena--accordion-panel-title-font-style, inherit );
+                //     font-weight: var( --gutena--accordion-panel-title-font-weight );
+                //     font-size: var( --gutena--accordion-panel-title-font-size, var( --wp--custom--typography--font-size--p ) );
+                //     line-height: var( --gutena--accordion-panel-title-line-height, var( --wp--custom--typography--line-height--p ) );
+                // }
+
+                $tags: (
+                    h1: hone,
+                    h2: htwo,
+                    h3: hthree,
+                    h4: hfour,
+                    h5: hfive,
+                    h6: hsix,
+                );
+
+                @each $name, $tag in $tags {
+                    #{$name} {
+                        color: var( --gutena--accordion-panel-title-color, var( --wp--preset--color--secondary ) ) !important;
+                        font-family: var( --gutena--accordion-panel-title-font-family, var( --wp--custom--typography--font-family--primary ) );
+                        font-weight: var( --gutena--accordion-panel-title-font-weight, var( --wp--custom--typography--font-weight--semi-bold ) );
+                        font-size: var( --gutena--accordion-panel-title-font-size, var( --wp--custom--typography--font-size--#{$tag} ) );
+                        line-height: var( --gutena--accordion-panel-title-line-height, var( --wp--custom--typography--line-height--#{$tag} ) );
+                        text-transform: var( --gutena--accordion-panel-title-text-transform );
+                    }
+                }
+            }
+        }
+
+        .gutena-accordion-block__panel-content {
+            color: var( --gutena--accordion-panel-content-color, var( --wp--preset--color--tertiary ) );
+            font-family: var( --gutena--accordion-panel-content-font-family, var( --wp--custom--typography--font-family--secondary ) );
+            font-size: var( --gutena--accordion-panel-content-font-size, var( --wp--custom--typography--line-height--p ) );
+            font-style: var( --gutena--accordion-panel-content-font-style );
+            font-weight: var( --gutena--accordion-panel-content-font-weight );
+            line-height: var( --gutena--accordion-panel-content-line-height, var( --wp--custom--typography--line-height--p ) );
+            text-transform: var( --gutena--accordion-panel-content-text-transform );
+            
+            figcaption:last-of-type,
+            .wp-block-image:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &:not(.editor) {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+
+            .gutena-accordion-block__panel-content-inner {
+                margin-top: calc( var( --gutena--accordion-panel-title-content-spacing ) * 1px );
+
+                > *:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .trigger-plus-minus {
+            position: relative;
+            display: flex;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+
+            .horizontal {
+                position: absolute;
+                width: 60%;
+                height: 2px;
+                background-color: #313233;
+                transition: all 0.2s ease-in-out;
+                transform: rotate(-90deg);
+                opacity: 1;
+            }
+
+            .vertical {
+                width: 2px;
+                height: 60%;
+                background-color: #313233;
+                transition: all 0.2s ease-in-out;
+                transform: rotate(-90deg);
+            }
+        }
+
+        .trigger-up-down {
+            width: 1.1rem;
+            height: 1.1rem;
+            display: inline-block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: auto;
+
+            .horizontal {
+                position: absolute;
+                width: .66rem;
+                height: .1rem;
+                background-color: #313233;
+                display: inline-block;
+                transition: all .2s ease;
+                left: 0;
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+
+            .vertical {
+                position: absolute;
+                width: .66rem;
+                height: .1rem;
+                background-color: #313233;
+                display: inline-block;
+                transition: all .2s ease;
+                right: 0;
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &.active {
+            border: var( --gutena--accordion-panel-open-border, var( --gutena--accordion-panel-border ) );
+            border-radius: var( --gutena--accordion-panel-open-border-radius, var( --gutena--accordion-panel-border-radius ) );
+            background-color: var( --gutena--accordion-panel-open-background-color, var( --gutena--accordion-panel-background-color ) );
+
+            .trigger-plus-minus {
+                .horizontal {
+                    transform: rotate(90deg);
+                    opacity: 0;
+                }
+
+                .vertical {
+                    transform: rotate(90deg);
+                }
+            }
+
+            .trigger-up-down {
+                .horizontal {
+                    transform: rotate(-45deg);
+                }
+
+                .vertical {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
