@@ -4,7 +4,6 @@
   "name": "gutena/accordion",
   "title": "Accordion",
   "category": "gutena",
-  "icon": "feedback",
   "description": "Accordion Block by Gutena",
   "textdomain": "gutena-accordion",
   "supports": {

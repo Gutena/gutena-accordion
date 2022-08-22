@@ -7,7 +7,6 @@
   "parent": [
     "gutena/accordion-panel"
   ],
-  "icon": "heading",
   "description": "Accordion Panel Title Block by Gutena",
   "textdomain": "gutena-accordion",
   "supports": {

@@ -5,7 +5,6 @@
     "title": "Content",
     "category": "gutena",
     "parent": [ "gutena/accordion-panel" ],
-    "icon": "shortcode",
     "description": "Gutena Accordion Panel Content",
     "textdomain": "gutena-accordion",
     "supports": {
