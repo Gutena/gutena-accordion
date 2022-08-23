@@ -56,7 +56,7 @@ If you like this plugin, consider exploring our other themes and plugins:
 = 1.0.1 =
 Release Date: August 23, 2022
 
-* Fixed: Showing Internal blocks as inddividual blocks.
+* Fixed: Showing Internal blocks as individual blocks.
 
 = 1.0.0 =
 Release Date: August 22, 2022
