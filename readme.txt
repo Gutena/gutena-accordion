@@ -3,7 +3,7 @@ Contributors: expresstech, infosatech
 Tags: accordion, block, block editor
 Requires at least: 5.8
 Tested up to: 6.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -52,6 +52,11 @@ If you like this plugin, consider exploring our other themes and plugins:
 1. Activate Gutena Accordion from your Plugins page.
 
 == Changelog ==
+
+= 1.0.1 =
+Release Date: August 23, 2022
+
+* Fixed: Showing Internal blocks as inddividual blocks.
 
 = 1.0.0 =
 Release Date: August 22, 2022
