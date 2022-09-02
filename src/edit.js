@@ -285,7 +285,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
     return (
 		<>
             <InspectorControls>
-                <PanelBody title={ __( 'Panel settings', 'gutena-accordion' ) } initialOpen={ false }>
+                <PanelBody title={ __( 'Panel Settings', 'gutena-accordion' ) } initialOpen={ false }>
                     <Spacer marginTop={ 3 } marginBottom={ 7 }>
                         <ToggleControl
                             label={ __( 'Open single panel at a time', 'gutena-accordion' ) }
@@ -308,7 +308,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                         max={ 50 }
                     />
                 </PanelBody>    
-			    <PanelBody title={ __( 'Panel styles', 'gutena-accordion' ) } initialOpen={ false }>
+			    <PanelBody title={ __( 'Panel Styles', 'gutena-accordion' ) } initialOpen={ false }>
                     <TabPanel 
                         className="gutena-tab-panel"
                         activeClass="active-tab"
@@ -337,7 +337,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                 <PanelColorSettings
                     __experimentalHasMultipleOrigins
 					__experimentalIsRenderedInSidebar
-					title={ __( 'Color settings', 'gutena-accordion' ) }
+					title={ __( 'Color Settings', 'gutena-accordion' ) }
 					initialOpen={ false }
 					colorSettings={ [
 						{
@@ -378,7 +378,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                         }
                     </TabPanel>
                 </PanelBody>
-                <PanelBody title={ __( 'Trigger icon settings', 'gutena-accordion' ) } initialOpen={ false }>
+                <PanelBody title={ __( 'Trigger Icon Settings', 'gutena-accordion' ) } initialOpen={ false }>
                     <SelectControl
                         label={ __( 'Trigger icon', 'gutena-accordion' ) }
                         value={ panelTriggerIcon }

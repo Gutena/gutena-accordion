@@ -21,7 +21,9 @@
       "radius": true,
       "style": true,
       "width": true
-    }
+    },
+    "__experimentalSettings": true,
+    "__experimentalLayout": true
   },
   "attributes": {
     "uniqueId": {

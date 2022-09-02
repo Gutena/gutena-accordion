@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Gutena Accordion
  * Description:     Accordion Block by Gutena
- * Version:         1.0.1
+ * Version:         1.0.2
  * Author:          ExpressTech
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Gutena_Accordion' ) ) {
 		 *
 		 * @var string
 		 */
-		public $version = '1.0.1';
+		public $version = '1.0.2';
 
 		/**
 		 * Instance of this class.
