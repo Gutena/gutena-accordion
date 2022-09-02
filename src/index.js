@@ -25,8 +25,14 @@ import './style.scss'
 registerBlockType( metadata, {
 	edit,
     save,
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.1 3C20.3387 3 20.5676 3.10536 20.7364 3.29289C20.9052 3.48043 21 3.73478 21 4V20C21 20.2652 20.9052 20.5196 20.7364 20.7071C20.5676 20.8946 20.3387 21 20.1 21H3.9C3.66131 21 3.43239 20.8946 3.2636 20.7071C3.09482 20.5196 3 20.2652 3 20V4C3 3.73478 3.09482 3.48043 3.2636 3.29289C3.43239 3.10536 3.66131 3 3.9 3H20.1ZM4.8 10V19H19.2V10H4.8ZM4.8 8H19.2V5H4.8V8Z" fill="#3F6DE4"/>
-        <path d="M20.1 21C20.3387 21 20.5676 20.8946 20.7364 20.7071C20.9052 20.5196 21 20.2652 21 20V4C21 3.73478 20.9052 3.48043 20.7364 3.29289C20.5676 3.10536 20.3387 3 20.1 3H3.9C3.66131 3 3.43239 3.10536 3.2636 3.29289C3.09482 3.48043 3 3.73478 3 4V20C3 20.2652 3.09482 20.5196 3.2636 20.7071C3.43239 20.8946 3.66131 21 3.9 21H20.1ZM4.8 14V5H19.2V14H4.8ZM4.8 16H19.2V19H4.8V16Z" fill="#3F6DE4"/>
-    </svg>
+    icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="1.5" height="20" fill="#3F6DE4"/>
+            <rect x="21" y="2" width="1.5" height="20" fill="#3F6DE4"/>
+            <rect x="2" y="3" width="1.5" height="20.5" transform="rotate(-90 2 3)" fill="#3F6DE4"/>
+            <rect x="2" y="22" width="1.5" height="20.5" transform="rotate(-90 2 22)" fill="#3F6DE4"/>
+            <rect x="2" y="15" width="1.5" height="20.5" transform="rotate(-90 2 15)" fill="#3F6DE4"/>
+            <rect x="2" y="9" width="1.5" height="20.5" transform="rotate(-90 2 9)" fill="#3F6DE4"/>
+        </svg>
+    )
 } )

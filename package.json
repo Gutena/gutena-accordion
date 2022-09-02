@@ -1,7 +1,7 @@
 {
 	"name": "gutena-accordion",
 	"version": "1.0.0",
-	"description": "Newsletter block plugin",
+	"description": "Accordion block plugin",
 	"author": "Sayan Datta",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
