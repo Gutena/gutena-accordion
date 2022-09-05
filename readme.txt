@@ -55,6 +55,11 @@ If you like this plugin, consider exploring our other themes and plugins:
 
 == Changelog ==
 
+= 1.0.3 =
+Release Date:
+
+* Added: Block Inline Styles to wp_head.
+
 = 1.0.2 =
 Release Date: September 2, 2022
 

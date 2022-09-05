@@ -77,12 +77,16 @@ if ( ! class_exists( 'Gutena_Accordion' ) ) {
 		 * Render Gutena Newsletter field block.
 		 */
 		public function render_block( $attributes, $content, $block ) {
-			return sprintf(
-				'<style id="dynamic-%1$s">.gutena-accordion-block-%1$s { %2$s }</style> %3$s',
-				$attributes['uniqueId'],
-				$this->render_css( $attributes['blockStyles'] ),
-				$content
-			);
+			// print styles to head
+			\add_action( 'wp_head', function() use( $attributes ) {
+				printf(
+					'<style id="gutena-accordion-block-inline-css-%1$s">.gutena-accordion-block-%1$s { %2$s }</style>',
+					$attributes['uniqueId'],
+					$this->render_css( $attributes['blockStyles'] ),
+				);
+			} );
+
+			return $content;
 		}
 
 		/**
