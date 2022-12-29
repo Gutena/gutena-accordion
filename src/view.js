@@ -1,22 +1,29 @@
 document.addEventListener( 'DOMContentLoaded', () => {
     const accordionNodeList = document.querySelectorAll( '.gutena-accordion-block' );
     accordionNodeList?.forEach( ( el, index ) => {
-        const panelNodeList = el.querySelectorAll( '.gutena-accordion-block__panel-title' );
-        for ( let i = 0; i < panelNodeList.length; i++ ) {
-            panelNodeList[i]?.addEventListener( 'click', () => {
-                const mainNode = panelNodeList[i].closest( '.gutena-accordion-block' );
-                const parentNode = panelNodeList[i].closest( '.gutena-accordion-block__panel' );
+        const panelNodeList = el?.querySelectorAll( ':scope > .gutena-accordion-block__panel > .gutena-accordion-block__panel-title' );
+        
+        panelNodeList?.forEach( ( el, index ) => {
+            el?.addEventListener( 'click', () => {
+                const mainNode = el.closest( '.gutena-accordion-block' );
+                const parentNode = el.closest( '.gutena-accordion-block__panel' );
                 parentNode?.classList?.toggle( 'active' );
-            
-                const panel = panelNodeList[i]?.nextElementSibling;
+
+                const panel = el?.nextElementSibling;
                 if ( panel.style.maxHeight ) {
-                    panel.style.maxHeight = null;
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                    setTimeout( function() {
+                        panel.style.maxHeight = null;
+                    }, 50 )
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + 'px';
-                }
+                    setTimeout( function() {
+                        panel.style.maxHeight = 'unset';
+                    }, 200 );
+                } 
 
                 if ( mainNode?.getAttribute( 'data-single' ) === 'true' ) {
-                    panelNodeList?.forEach( ( el, index ) => {
+                    panelNodeList?.forEach( ( el, i ) => {
                         if ( i !== index ) {
                             const siblingParentNode = el.closest( '.gutena-accordion-block__panel' )
                             
@@ -34,6 +41,11 @@ document.addEventListener( 'DOMContentLoaded', () => {
                     } );
                 }
             } );
+        } );
+
+        const activePanel = el?.getAttribute( 'data-open' );
+        if ( activePanel !== 'none' ) {
+            panelNodeList?.[ parseInt( activePanel ) ]?.click();
         }
-    });
+    } );
 } );
