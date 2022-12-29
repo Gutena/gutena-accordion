@@ -39,6 +39,9 @@
     "panelCollapse": {
       "type": "boolean"
     },
+    "panelDefaultOpen": {
+      "type": "string"
+    },
     "panelBorder": {
       "type": "object"
     },

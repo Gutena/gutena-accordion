@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n'
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor'
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor'
 
 const ALLOWED_BLOCKS = [ 'gutena/accordion-panel-title', 'gutena/accordion-panel-content' ]
 const BLOCK_TEMPLATE = [
@@ -12,12 +12,10 @@ export default function edit() {
         className: 'gutena-accordion-block__panel',
     } );
 
-	return (
-		<div { ...blockProps }>
-            <InnerBlocks
-                allowedBlocks={ ALLOWED_BLOCKS }
-                template={ BLOCK_TEMPLATE }
-            />
-		</div>
-	);
+    const innerBlocksProps = useInnerBlocksProps( blockProps, {
+        allowedBlocks: ALLOWED_BLOCKS,
+        template: BLOCK_TEMPLATE
+    } );
+
+	return <div { ...innerBlocksProps } />
 }

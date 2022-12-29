@@ -2,18 +2,25 @@
     display: grid;
     row-gap: calc( var( --gutena--accordion-panel-spacing, 20 ) * 1px );
 
-    .gutena-accordion-block__panel {
+    > .gutena-accordion-block__panel {
         border: var(--gutena--accordion-panel-border);
         border-radius: var(--gutena--accordion-panel-border-radius);
         background-color: var(--gutena--accordion-panel-background-color);
-        padding: var( --gutena--accordion-panel-padding, 20px );
+        //padding: var( --gutena--accordion-panel-padding, 20px );
+        margin: 0 !important;
+        cursor: pointer;
 
-        .gutena-accordion-block__panel-title {
+        > .gutena-accordion-block__panel-title {
+            padding: var( --gutena--accordion-panel-padding, 20px );
             color: var( --gutena--accordion-panel-title-color );
             cursor: pointer;
             transition: 0.4s;
+
+            &.editor {
+                padding-bottom: 0;
+            }
             
-            .gutena-accordion-block__panel-title-inner {
+            > .gutena-accordion-block__panel-title-inner {
                 display: flex;
                 align-items: center;
                 column-gap: 10px;
@@ -30,6 +37,68 @@
                     text-transform: var( --gutena--accordion-panel-title-text-transform );
                 }
 
+                > .trigger-plus-minus {
+                    position: relative;
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: auto;
+        
+                    > .horizontal {
+                        position: absolute;
+                        width: 60%;
+                        height: 2px;
+                        background-color: #313233;
+                        transition: all 0.2s ease-in-out;
+                        transform: rotate(-90deg);
+                        opacity: 1;
+                    }
+        
+                    > .vertical {
+                        width: 2px;
+                        height: 60%;
+                        background-color: #313233;
+                        transition: all 0.2s ease-in-out;
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                > .trigger-up-down {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    display: inline-block;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin-left: auto;
+        
+                    > .horizontal {
+                        position: absolute;
+                        width: .66rem;
+                        height: .1rem;
+                        background-color: #313233;
+                        display: inline-block;
+                        transition: all .2s ease;
+                        left: 0;
+                        bottom: 0;
+                        transform: rotate(45deg);
+                    }
+        
+                    > .vertical {
+                        position: absolute;
+                        width: .66rem;
+                        height: .1rem;
+                        background-color: #313233;
+                        display: inline-block;
+                        transition: all .2s ease;
+                        right: 0;
+                        bottom: 0;
+                        transform: rotate(-45deg);
+                    }
+                }
+        
                 // .panel-title-content {
                 //     margin: 0 !important;
                 //     color: var( --gutena--accordion-panel-title-color, var( --wp--preset--color--tertiary ) ) !important;
@@ -62,7 +131,7 @@
             }
         }
 
-        .gutena-accordion-block__panel-content {
+        > .gutena-accordion-block__panel-content {
             color: var( --gutena--accordion-panel-content-color, var( --wp--preset--color--tertiary ) );
             font-family: var( --gutena--accordion-panel-content-font-family, var( --wp--custom--typography--font-family--secondary ) );
             font-size: var( --gutena--accordion-panel-content-font-size, var( --wp--custom--typography--line-height--p ) );
@@ -70,7 +139,8 @@
             font-weight: var( --gutena--accordion-panel-content-font-weight );
             line-height: var( --gutena--accordion-panel-content-line-height, var( --wp--custom--typography--line-height--p ) );
             text-transform: var( --gutena--accordion-panel-content-text-transform );
-            
+            cursor: default;
+
             figcaption:last-of-type,
             .wp-block-image:last-of-type {
                 margin-bottom: 0;
@@ -82,7 +152,9 @@
                 transition: max-height 0.2s ease-out;
             }
 
-            .gutena-accordion-block__panel-content-inner {
+            > .gutena-accordion-block__panel-content-inner {
+                padding: var( --gutena--accordion-panel-padding, 20px );
+                padding-top: 0;
                 margin-top: calc( var( --gutena--accordion-panel-title-content-spacing ) * 1px );
 
                 > *:last-child {
@@ -91,91 +163,29 @@
             }
         }
 
-        .trigger-plus-minus {
-            position: relative;
-            display: flex;
-            width: 20px;
-            height: 20px;
-            justify-content: center;
-            align-items: center;
-            margin-left: auto;
+        &.active > .gutena-accordion-block__panel-title {
+            padding-bottom: 0;
 
-            .horizontal {
-                position: absolute;
-                width: 60%;
-                height: 2px;
-                background-color: #313233;
-                transition: all 0.2s ease-in-out;
-                transform: rotate(-90deg);
-                opacity: 1;
-            }
+            > .gutena-accordion-block__panel-title-inner {
+                > .trigger-plus-minus {
+                    > .horizontal {
+                        transform: rotate(90deg);
+                        opacity: 0;
+                    }
 
-            .vertical {
-                width: 2px;
-                height: 60%;
-                background-color: #313233;
-                transition: all 0.2s ease-in-out;
-                transform: rotate(-90deg);
-            }
-        }
-
-        .trigger-up-down {
-            width: 1.1rem;
-            height: 1.1rem;
-            display: inline-block;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-left: auto;
-
-            .horizontal {
-                position: absolute;
-                width: .66rem;
-                height: .1rem;
-                background-color: #313233;
-                display: inline-block;
-                transition: all .2s ease;
-                left: 0;
-                bottom: 0;
-                transform: rotate(45deg);
-            }
-
-            .vertical {
-                position: absolute;
-                width: .66rem;
-                height: .1rem;
-                background-color: #313233;
-                display: inline-block;
-                transition: all .2s ease;
-                right: 0;
-                bottom: 0;
-                transform: rotate(-45deg);
-            }
-        }
-
-        &.active {
-            border: var( --gutena--accordion-panel-open-border, var( --gutena--accordion-panel-border ) );
-            border-radius: var( --gutena--accordion-panel-open-border-radius, var( --gutena--accordion-panel-border-radius ) );
-            background-color: var( --gutena--accordion-panel-open-background-color, var( --gutena--accordion-panel-background-color ) );
-
-            .trigger-plus-minus {
-                .horizontal {
-                    transform: rotate(90deg);
-                    opacity: 0;
+                    > .vertical {
+                        transform: rotate(90deg);
+                    }
                 }
 
-                .vertical {
-                    transform: rotate(90deg);
-                }
-            }
+                > .trigger-up-down {
+                    > .horizontal {
+                        transform: rotate(-45deg);
+                    }
 
-            .trigger-up-down {
-                .horizontal {
-                    transform: rotate(-45deg);
-                }
-
-                .vertical {
-                    transform: rotate(45deg);
+                    > .vertical {
+                        transform: rotate(45deg);
+                    }
                 }
             }
         }

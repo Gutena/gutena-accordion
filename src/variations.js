@@ -39,9 +39,10 @@ const variations = [
 					[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "plus-minus", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 				] ], 
 				[ 'gutena/accordion-panel-content', {}, [
-					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 				] ]
-			] ] ],
+			] ] 
+		],
 		attributes: {
 			showVariation: false,
 			panelPadding: {
@@ -93,7 +94,7 @@ const variations = [
 				[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "plus-minus", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 			] ], 
 			[ 'gutena/accordion-panel-content', {}, [
-				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 			] ]
 		] ],
 		[ 'gutena/accordion-panel', {}, [
@@ -101,7 +102,7 @@ const variations = [
 				[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "plus-minus", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 			] ], 
 			[ 'gutena/accordion-panel-content', {}, [
-				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 			] ]
 		] ],
 		[ 'gutena/accordion-panel', {}, [
@@ -109,7 +110,7 @@ const variations = [
 				[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "plus-minus", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 			] ], 
 			[ 'gutena/accordion-panel-content', {}, [
-				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+				[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 			] ]
 		] ] ],
 		attributes: {
@@ -166,7 +167,7 @@ const variations = [
 					[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "up-down", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 				] ], 
 				[ 'gutena/accordion-panel-content', {}, [
-					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 				] ]
 			] ],
 			[ 'gutena/accordion-panel', {}, [
@@ -174,7 +175,7 @@ const variations = [
 					[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "up-down", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 				] ], 
 				[ 'gutena/accordion-panel-content', {}, [
-					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 				] ]
 			] ],
 			[ 'gutena/accordion-panel', {}, [
@@ -182,7 +183,7 @@ const variations = [
 					[ 'core/heading', { content: "Add your title here", panelTriggerIconGlobal: "up-down", textAlign: "left", level: 6, style: { spacing: { margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" } } } } ]
 				] ], 
 				[ 'gutena/accordion-panel-content', {}, [
-					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", "color": { "text": "#505050" } } ]
+					[ 'core/paragraph', { content: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", color: { text: "#505050" }, style: { spacing: { margin: { top: "0", bottom: "0" } } } } ]
 				] ]
 			] ]
 		],

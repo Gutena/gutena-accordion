@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n'
+import { __, sprintf } from '@wordpress/i18n'
 import { useEffect, useState } from '@wordpress/element'
 import { withDispatch, useDispatch, useSelect } from '@wordpress/data';
 import { 
@@ -11,9 +11,7 @@ import {
     __experimentalBlockVariationPicker as BlockVariationPicker,
 	store as blockEditorStore,
     ColorPaletteControl,
-    InnerBlocks,
     InspectorControls,
-    LineHeightControl,
     PanelColorSettings,
     useInnerBlocksProps,
     useBlockProps,
@@ -21,15 +19,11 @@ import {
 } from '@wordpress/block-editor'
 import { 
     __experimentalBorderControl as BorderControl,
-    __experimentalUnitControl as UnitControl,
     __experimentalBoxControl as BoxControl,
-    __experimentalToolsPanel as ToolsPanel,
-    __experimentalToolsPanelItem as ToolsPanelItem,
     __experimentalSpacer as Spacer,
     FontSizePicker,
     PanelBody,
     TabPanel,
-    TextControl,
     RangeControl,
     SelectControl,
     ToggleControl,
@@ -56,6 +50,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
         panelPadding,
         panelSpaceBetween,
         panelCollapse,
+        panelDefaultOpen,
         panelBorder,
         panelRadius,
         panelBackgroundColor,
@@ -81,6 +76,12 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
         showVariation,
         blockStyles
     } = attributes
+
+    const innerBlocksCount = useSelect(
+        ( select ) =>
+            select( blockEditorStore ).getBlocks( clientId ).length,
+        [ clientId ]
+    );
 
     const blockProps = useBlockProps( {
         className: `gutena-accordion-block gutena-accordion-block-${ attributes.uniqueId }`,
@@ -293,6 +294,18 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                             onChange={ ( value ) => setAttributes( { panelCollapse: value } ) }
                         />
                     </Spacer>
+                    <SelectControl
+                        label={ __( 'Default Open', 'gutena-accordion' ) }
+                        value={ panelDefaultOpen }
+                        onChange={ ( value ) => setAttributes( { panelDefaultOpen: value } ) }
+                    >
+                        <option value="none">{ __( 'None', 'gutena-accordion' ) }</option>
+                        {
+                            Array.from( Array( innerBlocksCount ).keys() ).map( ( value ) => (
+                                <option value={ value }>{ sprintf( __( 'Panel %d', 'gutena-accordion' ), value + 1 ) }</option>
+                            ) )
+                        }
+                    </SelectControl>
                     <RangeControl
                         label={ __( 'Space between the panels', 'gutena-accordion' ) }
                         value={ panelSpaceBetween }
@@ -393,7 +406,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
             </InspectorControls>
 
             { renderCSS }
-            <div { ...innerBlocksProps } data-single={ panelCollapse } />
+            <div { ...innerBlocksProps } data-single={ panelCollapse } data-open={ panelDefaultOpen } />
 		</>
 	);
 }

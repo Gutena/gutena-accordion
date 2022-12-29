@@ -7,14 +7,23 @@
     .block-editor-block-variation-picker {
         align-items: center;
 
-        .block-editor-block-variation-picker__variation:before {
-            padding: 0;
-            margin: 0;
+        .block-editor-block-variation-picker__variation {
+            &:before {
+                padding: 0;
+                margin: 0;
+            }
+
+            &.has-icon.is-secondary > svg {
+                width: 250px !important;
+                height: 150px !important;
+            }
         }
 
         .block-editor-block-variation-picker__variations svg {
             width: 100%;
             height: 100%;
+            max-width: 261px;
+            max-height: 175px;
         }
 
         &.is-large {
