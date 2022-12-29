@@ -14,13 +14,13 @@ Gutena Accordion is a WordPress Plugin which makes accordion dropdown creation r
 
 == Features == 
 
-Complete control over the look and feel
-Fully customizable, so you can make your accordion fit your brand
-No jQuery, so it won’t slow down your website
-You can open or close the first accordion item by default.
-You can add other core blocks inside an accordion tab.
-Control all accordion tabs from a single setting.
-Fully responsive and much more..
+* Complete control over the look and feel
+* Fully customizable, so you can make your accordion fit your brand
+* No jQuery, so it won’t slow down your website
+* You can open or close the first accordion item by default.
+* You can add other core blocks inside an accordion tab.
+* Control all accordion tabs from a single setting.
+* Fully responsive and much more..
 
 == Other Blocks From Gutena ==
 
@@ -67,6 +67,7 @@ Release Date: December 29, 2022
 * Added: Support for nested accordions.
 * Tweak: Full title area is now clickable.
 * Fixed: Block Editor variation preview style.
+* Updated: readme.txt file content and Block icons.
 * Tested with WordPress v6.1.
 
 = 1.0.2 =
