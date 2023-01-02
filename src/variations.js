@@ -156,9 +156,9 @@ const variations = [
 				<rect opacity="0.7" x="30.1932" y="56.429" width="186.607" height="1.37483" rx="0.687416" fill="#94ABE7"/>
 				<rect opacity="0.7" x="30.1932" y="64.678" width="176.698" height="1.37483" rx="0.687416" fill="#94ABE7"/>
 				<rect opacity="0.7" x="30.1932" y="72.9265" width="73.762" height="1.37483" rx="0.687416" fill="#94ABE7"/>
-				<path d="M224.59 39.3414L228 35.8555L231.41 39.3414" stroke="#6884CA" stroke-width="2"/>
-				<path d="M224.59 103.583L228 107.069L231.41 103.583" stroke="#6884CA" stroke-width="2"/>
-				<path d="M224 137.446L227.41 140.932L230.821 137.446" stroke="#6884CA" stroke-width="2"/>
+				<path d="M224.59 39.3414L228 35.8555L231.41 39.3414" stroke="#6884CA" strokeWidth="2"/>
+				<path d="M224.59 103.583L228 107.069L231.41 103.583" stroke="#6884CA" strokeWidth="2"/>
+				<path d="M224 137.446L227.41 140.932L230.821 137.446" stroke="#6884CA" strokeWidth="2"/>
 			</svg>
 		),
 		innerBlocks: [
