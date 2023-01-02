@@ -302,7 +302,7 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                         <option value="none">{ __( 'None', 'gutena-accordion' ) }</option>
                         {
                             Array.from( Array( innerBlocksCount ).keys() ).map( ( value ) => (
-                                <option value={ value }>{ sprintf( __( 'Panel %d', 'gutena-accordion' ), value + 1 ) }</option>
+                                <option value={ value } key={ value.toString() }>{ sprintf( __( 'Panel %d', 'gutena-accordion' ), value + 1 ) }</option>
                             ) )
                         }
                     </SelectControl>

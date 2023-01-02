@@ -1,9 +1,9 @@
-=== Gutena Accordion ===
+=== Gutena Accordion - Beautiful FAQ Accordion Block ===
 Contributors: expresstech, infosatech
-Tags: accordion, block, block editor
+Tags: accordion, faq, block, accordions, toggles
 Requires at least: 5.8
 Tested up to: 6.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -30,6 +30,8 @@ If you like this plugin, consider exploring our other block plugins:
 
 [Gutena Forms](https://wordpress.org/plugins/gutena-forms/) - Easily and instantly add Forms Block to your Gutenberg Editor. Gutena Forms is a native form block for Gutenberg. Built for Look, Speed and Functionality.
 
+[Gutena Video Lightbox](https://wordpress.org/plugins/gutena-lightbox/) - Easily and instantly add Lightbox Video Popup Block to your Gutenberg Editor.
+
 [Gutena PhotoFeed](https://wordpress.org/plugins/photofeed-block-by-gutena/) - Display Instagram Photos from your Instagram accounts, either in the same single feed or in multiple different ones.
 
 [Gutena Recent Post Tag](https://wordpress.org/plugins/post-featured-tag-block-by-gutena/) - Post Featured Tag Block use to add custom featured or new tag on post based on post date.
@@ -48,7 +50,7 @@ If you like this plugin, consider exploring our other themes and plugins:
 
 [Booking Ultra](https://wordpress.org/plugins/booking-ultra-pro/) - Appointment Booking plugin for WordPress - Show a quick form to accept bookings for your services with pre-set booking slots. Ideal for salons, medical professionals, lawyers, consultants, etc.
 
-[InstaWP](https://instawp.io/) - Launch a quick WordPress site with this sandbox service. Create New WordPress instance within a second.
+[InstaWP](https://instawp.com/) - Launch a quick WordPress site with this sandbox service. Create New WordPress instance within a second.
 
 == Installation ==
 
@@ -58,6 +60,12 @@ If you like this plugin, consider exploring our other themes and plugins:
 1. Activate Gutena Accordion from your Plugins page.
 
 == Changelog ==
+
+= 1.0.4 =
+Release Date: January 2, 2023
+
+* Fixed: React console error on some installations.
+* Updated: Readme.txt file contents.
 
 = 1.0.3 =
 Release Date: December 29, 2022
