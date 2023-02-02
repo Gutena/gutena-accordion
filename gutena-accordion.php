@@ -1,9 +1,10 @@
 <?php // @codingStandardsIgnoreLine
 /**
  * Plugin Name:     Gutena Accordion
- * Description:     Accordion Block by Gutena
- * Version:         1.0.2
+ * Description:     Gutena Accordion is a WordPress Plugin which makes accordion dropdown creation really easy inside the block editor. Furthermore, it is very light weight and uses no jQuery. The speed of the website is not affected. You can edit the accordion dropdown right inside the block editor.
+ * Version:         1.0.4
  * Author:          ExpressTech
+ * Author URI:      https://expresstech.io
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     gutena-accordion
@@ -30,7 +31,7 @@ if ( ! class_exists( 'Gutena_Accordion' ) ) {
 		 *
 		 * @var string
 		 */
-		public $version = '1.0.2';
+		public $version = '1.0.4';
 
 		/**
 		 * Instance of this class.
@@ -77,12 +78,16 @@ if ( ! class_exists( 'Gutena_Accordion' ) ) {
 		 * Render Gutena Newsletter field block.
 		 */
 		public function render_block( $attributes, $content, $block ) {
-			return sprintf(
-				'<style id="dynamic-%1$s">.gutena-accordion-block-%1$s { %2$s }</style> %3$s',
-				$attributes['uniqueId'],
-				$this->render_css( $attributes['blockStyles'] ),
-				$content
-			);
+			// print styles to head
+			\add_action( 'wp_head', function() use( $attributes ) {
+				printf(
+					'<style id="gutena-accordion-block-inline-css-%1$s">.gutena-accordion-block-%1$s { %2$s }</style>',
+					$attributes['uniqueId'],
+					$this->render_css( $attributes['blockStyles'] ),
+				);
+			} );
+
+			return $content;
 		}
 
 		/**

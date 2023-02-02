@@ -4,6 +4,7 @@
     "name": "gutena/accordion",
     "title": "Accordion",
     "category": "gutena",
+    "keywords": [ "faq", "accordion", "block", "accordions", "toggles" ],
     "description": "Accordion Block by Gutena",
     "textdomain": "gutena-accordion",
     "supports": {
@@ -35,6 +36,9 @@
         },
         "panelCollapse": {
             "type": "boolean"
+        },
+        "panelDefaultOpen": {
+            "type": "string"
         },
         "panelBorder": {
             "type": "object"
