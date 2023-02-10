@@ -2,8 +2,8 @@
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n'
-import { useEffect, useState } from '@wordpress/element'
-import { withDispatch, useDispatch, useSelect } from '@wordpress/data';
+import { useEffect } from '@wordpress/element'
+import { useDispatch, useSelect } from '@wordpress/data';
 import { 
 	__experimentalFontFamilyControl as FontFamilyControl,
 	__experimentalFontAppearanceControl as FontAppearanceControl,
@@ -29,17 +29,20 @@ import {
     ToggleControl,
 } from '@wordpress/components'
 import {
-	createBlock,
 	createBlocksFromInnerBlocksTemplate,
-	store as blocksStore,
 } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
  */
 import DynamicStyles from './styles'
-import './editor.scss'
 import variations from './variations'
+import './editor.scss'
+
+/**
+ * External dependencies
+ */
+import { isEqual } from 'lodash';
 
 const gutenaAccordUniqueIds = [];
 const ALLOWED_BLOCKS = [ 'gutena/accordion-panel' ]
@@ -73,7 +76,6 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
         panelContentTextTransform,
         panelTitleContentGap,
         panelTriggerIcon,
-        showVariation,
         blockStyles
     } = attributes
 
@@ -188,15 +190,17 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                     } )
                 } }
             />
-            <RangeControl
-                label={ __( 'Line height', 'gutena-accordion' ) }
-                value={ panelTitleLineHeight }
-                onChange={ ( value ) => setAttributes( { panelTitleLineHeight: value } ) }
-                min={ 0 }
-                max={ 10 }
-                step={ 0.1 }
-                allowReset={ true }
-            />
+            <Spacer marginTop={ 6 } marginBottom={ 6 }>
+                <RangeControl
+                    label={ __( 'Line height', 'gutena-accordion' ) }
+                    value={ panelTitleLineHeight }
+                    onChange={ ( value ) => setAttributes( { panelTitleLineHeight: value } ) }
+                    min={ 0 }
+                    max={ 10 }
+                    step={ 0.1 }
+                    allowReset={ true }
+                />
+            </Spacer>
             <SelectControl
                 label={ __( 'Text transform', 'gutena-accordion' ) } 
                 value={ panelTitleTextTransform }
@@ -240,15 +244,17 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                     } )
                 } }
             />
-            <RangeControl
-                label={ __( 'Line height', 'gutena-accordion' ) }
-                value={ panelContentLineHeight }
-                onChange={ ( value ) => setAttributes( { panelContentLineHeight: value } ) }
-                min={ 0 }
-                max={ 10 }
-                step={ 0.1 }
-                allowReset={ true }
-            />
+            <Spacer marginTop={ 6 } marginBottom={ 6 }>
+                <RangeControl
+                    label={ __( 'Line height', 'gutena-accordion' ) }
+                    value={ panelContentLineHeight }
+                    onChange={ ( value ) => setAttributes( { panelContentLineHeight: value } ) }
+                    min={ 0 }
+                    max={ 10 }
+                    step={ 0.1 }
+                    allowReset={ true }
+                />
+            </Spacer>
             <SelectControl
                 label={ __( 'Text transform', 'gutena-accordion' ) } 
                 value={ panelContentTextTransform }
@@ -274,14 +280,13 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
 		</style>
 	);
 
-    const customStyles = JSON.stringify( dynamicStyles )
     useEffect( () => {
-        if ( customStyles != JSON.stringify( blockStyles ) ) {
+        if ( ! isEqual( blockStyles, dynamicStyles ) ) {
 			setAttributes( {
 				blockStyles: dynamicStyles,
 			} );
         }
-    }, [ customStyles ] )
+    }, [ dynamicStyles ] )
 
     return (
 		<>
@@ -347,24 +352,24 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                         }
                     </TabPanel>
                 </PanelBody>
-                <PanelColorSettings
-                    __experimentalHasMultipleOrigins
-					__experimentalIsRenderedInSidebar
-					title={ __( 'Color Settings', 'gutena-accordion' ) }
-					initialOpen={ false }
-					colorSettings={ [
-						{
-							value: panelTitleColor,
-                            onChange: ( value ) => setAttributes( { panelTitleColor: value } ),
-							label: __( 'Title color', 'gutena-accordion' ),
-						},
-                        {
-							value: panelContentColor,
-                            onChange: ( value ) => setAttributes( { panelContentColor: value } ),
-							label: __( 'Content color', 'gutena-accordion' ),
-						},
-					] }
-				/>
+                <PanelBody title={ __( 'Color Settings', 'gutena-tabs' ) } initialOpen={ false } className="gutena-accordion-settings">
+                    <PanelColorSettings
+                        __experimentalHasMultipleOrigins
+                        __experimentalIsRenderedInSidebar
+                        colorSettings={ [
+                            {
+                                value: panelTitleColor,
+                                onChange: ( value ) => setAttributes( { panelTitleColor: value } ),
+                                label: __( 'Title color', 'gutena-accordion' ),
+                            },
+                            {
+                                value: panelContentColor,
+                                onChange: ( value ) => setAttributes( { panelContentColor: value } ),
+                                label: __( 'Content color', 'gutena-accordion' ),
+                            },
+                        ] }
+                    />
+                </PanelBody>
                 <PanelBody title={ __( 'Typography', 'gutena-accordion' ) } initialOpen={ false }>
                     <TabPanel 
                         className="gutena-tab-panel"
