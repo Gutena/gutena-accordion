@@ -3,7 +3,7 @@ Contributors: expresstech, infosatech
 Tags: accordion, faq, block, accordions, toggles
 Requires at least: 5.8
 Tested up to: 6.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -11,6 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 == Description ==
 
 Gutena Accordion is a WordPress Plugin which makes accordion dropdown creation really easy inside the block editor. Furthermore, it is very light weight and uses no jQuery. The speed of the website is not affected. You can edit the accordion dropdown right inside the block editor.
+
+[youtube https://www.youtube.com/watch?v=MtBYSlqGU_Q]
 
 == Features == 
 
@@ -25,6 +27,8 @@ Gutena Accordion is a WordPress Plugin which makes accordion dropdown creation r
 == Other Blocks From Gutena ==
 
 If you like this plugin, consider exploring our other block plugins: 
+
+[Gutena Tabs](https://wordpress.org/plugins/gutena-tabs/) - A simple and easy-to-use WordPress plugin which allows you to create beautiful tabs in your posts and pages.
 
 [Gutena Newsletter](https://wordpress.org/plugins/newsletter-block-by-gutena/) - Easily and instantly add Newsletter Block to your Gutenberg Editor.
 
@@ -60,6 +64,14 @@ If you like this plugin, consider exploring our other themes and plugins:
 1. Activate Gutena Accordion from your Plugins page.
 
 == Changelog ==
+
+= 1.0.5 =
+Release Date: February 10, 2023
+
+* Fixed: Colors Tab is not collapsible.
+* Fixed: CSS is not applying on some installations.
+* Added: Gutena Kit CTA.
+* Added: Demo Video in Readme file..
 
 = 1.0.4 =
 Release Date: January 2, 2023
