@@ -190,15 +190,17 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                     } )
                 } }
             />
-            <RangeControl
-                label={ __( 'Line height', 'gutena-accordion' ) }
-                value={ panelTitleLineHeight }
-                onChange={ ( value ) => setAttributes( { panelTitleLineHeight: value } ) }
-                min={ 0 }
-                max={ 10 }
-                step={ 0.1 }
-                allowReset={ true }
-            />
+            <Spacer marginTop={ 6 } marginBottom={ 6 }>
+                <RangeControl
+                    label={ __( 'Line height', 'gutena-accordion' ) }
+                    value={ panelTitleLineHeight }
+                    onChange={ ( value ) => setAttributes( { panelTitleLineHeight: value } ) }
+                    min={ 0 }
+                    max={ 10 }
+                    step={ 0.1 }
+                    allowReset={ true }
+                />
+            </Spacer>
             <SelectControl
                 label={ __( 'Text transform', 'gutena-accordion' ) } 
                 value={ panelTitleTextTransform }
@@ -242,15 +244,17 @@ function EditContainer( { clientId, attributes, setAttributes } ) {
                     } )
                 } }
             />
-            <RangeControl
-                label={ __( 'Line height', 'gutena-accordion' ) }
-                value={ panelContentLineHeight }
-                onChange={ ( value ) => setAttributes( { panelContentLineHeight: value } ) }
-                min={ 0 }
-                max={ 10 }
-                step={ 0.1 }
-                allowReset={ true }
-            />
+            <Spacer marginTop={ 6 } marginBottom={ 6 }>
+                <RangeControl
+                    label={ __( 'Line height', 'gutena-accordion' ) }
+                    value={ panelContentLineHeight }
+                    onChange={ ( value ) => setAttributes( { panelContentLineHeight: value } ) }
+                    min={ 0 }
+                    max={ 10 }
+                    step={ 0.1 }
+                    allowReset={ true }
+                />
+            </Spacer>
             <SelectControl
                 label={ __( 'Text transform', 'gutena-accordion' ) } 
                 value={ panelContentTextTransform }

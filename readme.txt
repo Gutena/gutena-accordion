@@ -70,6 +70,7 @@ Release Date: February 10, 2023
 
 * Fixed: Colors Tab is not collapsible.
 * Fixed: CSS is not applying on some installations.
+* Fixed: Line Height Control CSS.
 * Added: Gutena Kit CTA.
 * Added: Demo Video in Readme file.
 * Improvement: Code Optimized.
