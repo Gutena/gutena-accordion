@@ -71,7 +71,8 @@ Release Date: February 10, 2023
 * Fixed: Colors Tab is not collapsible.
 * Fixed: CSS is not applying on some installations.
 * Added: Gutena Kit CTA.
-* Added: Demo Video in Readme file..
+* Added: Demo Video in Readme file.
+* Improvement: Code Optimized.
 
 = 1.0.4 =
 Release Date: January 2, 2023
