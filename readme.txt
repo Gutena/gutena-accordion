@@ -2,7 +2,7 @@
 Contributors: expresstech, infosatech
 Tags: accordion, faq, block, accordions, toggles
 Requires at least: 5.8
-Tested up to: 6.1
+Tested up to: 6.2
 Stable tag: 1.0.5
 Requires PHP: 5.6
 License: GPLv3
